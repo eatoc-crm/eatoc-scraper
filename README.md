@@ -139,3 +139,4 @@ Railway hobby plan: ~£5/month. No AI API costs for scraping.
 **Scrape returns empty data:** Rightmove/Zoopla may have changed their page structure. Check Railway logs (click your service → Logs tab) for error details and report to David.
 
 **Timeout errors:** Some listings take longer. The scraper allows 30 seconds per page. If consistently timing out, Railway may need more RAM — upgrade to the $10/month plan.
+
