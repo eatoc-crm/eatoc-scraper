@@ -1,5 +1,4 @@
-const puppeteer = require('puppeteer');
-
+const puppeteer = require('puppeteer-core');
 async function scrapeRightmove(url) {
   let browser;
   try {
