@@ -1,4 +1,15 @@
-FROM node:20-slim
+FROM ghcr.io/puppeteer/puppeteer:21.0.0
+
+WORKDIR /app
+USER root
+
+COPY package.json .
+RUN npm install --production
+
+COPY . .
+
+EXPOSE 3000
+CMD ["node", "server.js"] node:20-slim
 
 # Install Chrome dependencies for Puppeteer
 RUN apt-get update && apt-get install -y \
