@@ -1,8 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-const { scrapeRightmove } = require('./scrapers/rightmove');
-const { scrapeZoopla } = require('./scrapers/zoopla');
-
+const { scrapeRightmove } = require('./rightmove');
+const { scrapeZoopla } = require('./zoopla');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const API_KEY = process.env.EATOC_SCRAPER_KEY;
