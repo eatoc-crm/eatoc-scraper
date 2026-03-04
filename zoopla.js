@@ -208,3 +208,16 @@ function extractZooplaId(url) {
 }
 
 module.exports = { scrapeZoopla };
+browser = await puppeteer.launch({
+  headless: 'new',
+  executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/chromium',
+  args: [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage',
+    '--disable-gpu',
+    '--no-first-run',
+    '--no-zygote',
+    '--single-process'
+  ]
+});
