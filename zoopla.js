@@ -35,4 +35,26 @@ async function scrapeZoopla(url) {
     source: 'zoopla',
     url,
     zooplaId: (url.match(/\/(\d+)\/?$/) || [])[1] || '',
-    ad
+    address: addr.displayAddress || addr.streetName || '',
+    postcode: addr.postcode || '',
+    price: priceNum,
+    priceDisplay: price.displayPrice || '',
+    beds: details.beds || details.numBedrooms || 0,
+    baths: details.baths || details.numBathrooms || 0,
+    propertyType: details.propertyType || '',
+    tenure: details.tenure || '',
+    description: content.description || details.description || '',
+    features: Array.isArray(features) ? features : [],
+    rooms: [],
+    photos,
+    floorplans,
+    epc: {},
+    lat: (details.location || {}).latitude || null,
+    lng: (details.location || {}).longitude || null,
+    agentName: branch.name || '',
+    agentPhone: branch.phone || '',
+    scrapedAt: new Date().toISOString()
+  };
+}
+
+module.exports = { scrapeZoopla };
